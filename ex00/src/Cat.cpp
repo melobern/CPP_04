@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:24:03 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/20 14:00:04 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/20 15:46:21 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ Cat::~Cat() {
 Cat   &Cat::operator=(const Cat &cat) {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &cat) {
-        this->_name = cat.getName();
+        this->_type = cat._type;
     }
     return (*this);
+}
+
+void    Cat::makeSound() {
+    std::cout << "Meowwwwwwwwwwwww !" << std::endl;
 }
