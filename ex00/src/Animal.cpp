@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 11:41:45 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:18:07 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Animal   &Animal::operator=(const Animal &animal) {
     return (*this);
 }
 
-std::string    Animal::getType() const {
+std::string   const& Animal::getType() const {
     std::cout << std::endl << this->type << " Motherfucka !" << std::endl;
     return (this->type);
 }
