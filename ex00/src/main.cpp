@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 11:39:43 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:20:08 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,9 @@ int main(void)
     meta->makeSound();
     k->makeSound();
 
+    delete meta;
+    delete j;
+    delete i;
+    delete k;
     return 0;
 }
