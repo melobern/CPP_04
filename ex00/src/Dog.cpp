@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:24:03 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 11:28:42 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:42:05 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Dog::~Dog() {
 }
 
 Dog   &Dog::operator=(const Dog &dog) {
-    this->Dog::~Animal();
+    this->Dog::~Dog();
     new (this) Dog(dog);
     std::cout << "Copy assignment operator called" << std::endl;
     return (*this);
