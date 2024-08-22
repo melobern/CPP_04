@@ -6,38 +6,39 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:24:03 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 11:32:15 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 14:58:50 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/WrongCat.hpp"
 
-WrongCat::WrongCat(void) {
-    std::cout << "WrongCat :";
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat") {
+    std::cout << "WrongCat\t: ";
     std::cout << "Default constructor called" << std::endl;
     return;
 }
 
 WrongCat::WrongCat(const WrongCat &cat) {
-    std::cout << "WrongCat : ";
+    std::cout << "WrongCat\t: ";
     std::cout << "Copy constructor called" << std::endl;
     *this = cat;
     return;
 }
 
 WrongCat::~WrongCat() {
-    std::cout << "WrongCat : ";
+    std::cout << "WrongCat\t: ";
     std::cout <<"Destructor called" << std::endl;
     return;
 }
 
 WrongCat   &WrongCat::operator=(const WrongCat &wrongcat) {
-    this->WrongCat::~WrongCat();
-    new (this) WrongCat(wrongcat);
+    if (this != &wrongcat) {
+        this->type = wrongcat.type;
+    }
     std::cout << "Copy assignment operator called" << std::endl;
     return (*this);
 }
 
 void    WrongCat::makeSound() const {
-    std::cout << "Meowwwwwwwwwwwww !" << std::endl;
+    std::cout << "Wrong Meowwwwwwwwwwwww !" << std::endl;
 }

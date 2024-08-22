@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:37:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 13:21:54 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 13:44:13 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class Animal {
   virtual void   makeSound(void) const;
   std::string   const& getType(void) const;
  protected:
-    const std::string type;
+    std::string type;
 };
 #endif  //  EX00_INCLUDES_ANIMAL_HPP_
