@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:37:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/20 15:55:32 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:23:33 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ class Cat : public Animal {
   explicit Cat(const Cat &cat);
   ~Cat(void);
   Cat &operator=(const Cat &cat);
-  void   makeSound(void) const;
+  virtual void   makeSound(void) const;
 };
 #endif  // EX00_INCLUDES_CAT_HPP_

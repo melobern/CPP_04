@@ -1,53 +1,54 @@
 /* Copyright 2024 <mbernard>************************************************* */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 11:38:34 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:25:44 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
-Animal::Animal(void) {
+WrongAnimal::WrongAnimal(void): type("unknown") {
     std::cout << "Default constructor called" << std::endl;
     return;
 }
 
-Animal::Animal(const std::string type): type(type){
-    std::cout << "Animal " << type;
+WrongAnimal::WrongAnimal(const std::string type): type(type) {
+    std::cout << "WrongAnimal " << type;
     std::cout << " : constructor called" << std::endl;
     return;
 }
 
-Animal::Animal(const Animal &animal) {
+WrongAnimal::WrongAnimal(const WrongAnimal &animal) {
     std::cout << "Copy constructor called" << std::endl;
     *this = animal;
     return;
 }
 
-Animal::~Animal() {
-    std::cout << "Animal " << this->type;
+WrongAnimal::~WrongAnimal() {
+    std::cout << "WrongAnimal " << this->type;
     std::cout <<" : Destructor called" << std::endl;
     return;
 }
 
-Animal   &Animal::operator=(const Animal &animal) {
-    this->Animal::~Animal();
-    new (this) Animal(animal);
+WrongAnimal   &WrongAnimal::operator=(const WrongAnimal &animal) {
     std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &animal) {
+        this->type = animal.type;
+    }
     return (*this);
 }
 
-std::string    Animal::getType() const {
-    std::cout << std::endl << this->type << " Motherfucka !" << std::endl;
+std::string    WrongAnimal::getType() const {
     return (this->type);
 }
 
-void    Animal::makeSound() const {
-    std::cout << "awwouuuwarrwrrr : Strange unidentified noise." << std::endl;
+void    WrongAnimal::makeSound() const {
+    std::cout << "awwouuuwarrwrrr : Strange unidentified noise.";
+    std::cout << "This sound seems so wrong." << std::endl;
 }
 

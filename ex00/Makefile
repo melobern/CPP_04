@@ -6,7 +6,7 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/15 10:06:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/08/20 13:35:30 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/22 10:52:11 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ MKDIR = mkdir -p
 RMDIR = rm -rf
 
 # ---------------------------------- Sources --------------------------------- #
-HEADER = Animal Dog Cat
-SRCS = main Animal Dog Cat
+HEADER = Animal Dog Cat WrongAnimal WrongCat
+SRCS = main Animal Dog Cat WrongAnimal WrongCat
 
 # ---------------------------------- Repertories ----------------------------- #
 HEADERS_DIR = includes/
