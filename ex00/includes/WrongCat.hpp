@@ -1,28 +1,28 @@
 /* Copyright 2024 <mbernard>************************************************* */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:37:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 11:23:45 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:24:06 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX00_INCLUDES_DOG_HPP_
-#define EX00_INCLUDES_DOG_HPP_
+#ifndef EX00_INCLUDES_WRONGCAT_HPP_
+#define EX00_INCLUDES_WRONGCAT_HPP_
 
 #include <iostream>
 #include <string>
-#include "../includes/Animal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
-class Dog : public Animal {
+class WrongCat : public WrongAnimal {
  public:
-  Dog(void);
-  explicit Dog(const Dog &dog);
-  ~Dog(void);
-  Dog &operator=(const Dog &cat);
-  virtual void   makeSound(void) const;
+  WrongCat(void);
+  explicit WrongCat(const WrongCat &cat);
+  ~WrongCat(void);
+  WrongCat &operator=(const WrongCat &cat);
+  void   makeSound(void) const;
 };
-#endif  // EX00_INCLUDES_DOG_HPP_
+#endif  // EX00_INCLUDES_WRONGCAT_HPP_

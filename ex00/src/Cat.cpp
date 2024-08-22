@@ -6,13 +6,13 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:24:03 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/20 15:46:21 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/22 11:30:09 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Cat.hpp"
 
-Cat::Cat(void): {
+Cat::Cat(void) {
     std::cout << "Cat :";
     std::cout << "Default constructor called" << std::endl;
     return;
@@ -32,13 +32,12 @@ Cat::~Cat() {
 }
 
 Cat   &Cat::operator=(const Cat &cat) {
+    this->Cat::~Cat();
+    new (this) Cat(cat);
     std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &cat) {
-        this->_type = cat._type;
-    }
     return (*this);
 }
 
-void    Cat::makeSound() {
+void    Cat::makeSound() const {
     std::cout << "Meowwwwwwwwwwwww !" << std::endl;
 }
