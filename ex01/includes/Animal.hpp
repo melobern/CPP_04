@@ -6,12 +6,12 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:37:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 13:44:13 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/26 10:32:42 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX00_INCLUDES_ANIMAL_HPP_
-#define EX00_INCLUDES_ANIMAL_HPP_
+#ifndef EX01_INCLUDES_ANIMAL_HPP_
+#define EX01_INCLUDES_ANIMAL_HPP_
 
 #include <iostream>
 #include <string>
@@ -24,8 +24,11 @@ class Animal {
   virtual ~Animal(void);
   Animal &operator=(const Animal &animal);
   virtual void   makeSound(void) const;
+  virtual void   showIdeas(void) const;
+  virtual void   setIdea(std::string newIdea) const;
+  virtual void   setIdea(std::string newIdea, unsigned int index) const;
   std::string   const& getType(void) const;
  protected:
     std::string type;
 };
-#endif  //  EX00_INCLUDES_ANIMAL_HPP_
+#endif  //  EX01_INCLUDES_ANIMAL_HPP_

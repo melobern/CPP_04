@@ -6,16 +6,17 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:37:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 11:23:45 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/26 10:29:50 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX00_INCLUDES_DOG_HPP_
-#define EX00_INCLUDES_DOG_HPP_
+#ifndef EX01_INCLUDES_DOG_HPP_
+#define EX01_INCLUDES_DOG_HPP_
 
 #include <iostream>
 #include <string>
 #include "../includes/Animal.hpp"
+#include "../includes/Brain.hpp"
 
 class Dog : public Animal {
  public:
@@ -24,5 +25,10 @@ class Dog : public Animal {
   ~Dog(void);
   Dog &operator=(const Dog &cat);
   virtual void   makeSound(void) const;
+  virtual void   showIdeas(void) const;
+  virtual void   setIdea(std::string newIdea) const;
+  virtual void   setIdea(std::string newIdea, unsigned int index) const;
+  private:
+   Brain*    _brain;
 };
-#endif  // EX00_INCLUDES_DOG_HPP_
+#endif  // EX01_INCLUDES_DOG_HPP_

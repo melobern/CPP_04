@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 14:59:09 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/26 10:31:14 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,12 @@ int main(void) {
     const WrongAnimal* wrongKitty = new WrongCat();
 
     std::cout << "END OF CONSTRUCTORS" << std::endl << std::endl;
-    std::cout << "OK GUYS, TELL ME WHO YOU ARE ?" << std::endl;
-    std::cout << "Doggie\t\t:\t" << doggie->getType() << " " << std::endl;
-    std::cout << "Kitty\t\t:\t" << kitty->getType() << " " << std::endl;
-    std::cout << "Kitten\t\t:\t" << kitten->getType() << " " << std::endl;
-    std::cout << "WrongKitty\t:\t" << wrongKitty->getType() << " " << std::endl;
-    std::cout << "Meta\t\t:\t" << meta->getType() << " " << std::endl;
-    std::cout << "WrongMeta\t:\t" << wrongMeta->getType() << " " << std::endl;
-
-    std::cout << std::endl << "FINE, WHO'S A GOOD PUPPY ?" << std::endl;
-    std::cout << "Doggie\t\t:\t";
-    doggie->makeSound();
-    std::cout << "Kitty\t\t:\t";
-    kitty->makeSound();
-    std::cout << "Kitten\t\t:\t";
-    kitten->makeSound();
-    std::cout << "Meta\t\t:\t";
-    meta->makeSound();
-    std::cout << "WrongKitty\t:\t";
-    wrongKitty->makeSound();
-    std::cout << "WrongMeta\t:\t";
-    wrongMeta->makeSound();
-
+    doggie->setIdea("WOUF");
+    doggie->showIdeas();
+    kitty->setIdea("WOUF");
+    kitty->showIdeas();
+    kitten->setIdea("WOUF");
+    kitten->showIdeas();
     std::cout << std::endl << "BEGINNING OF DESTRUCTORS" << std::endl;
     delete doggie;
     delete kitty;
