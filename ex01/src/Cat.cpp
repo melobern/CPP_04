@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:24:03 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/26 10:18:55 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/26 11:58:08 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void    Cat::makeSound() const {
 
 void   Cat::showIdeas(void) const {
     int i = 0;
-    std::string *ideas = this->_brain->getIdeas();
-    while (!ideas[i].empty()) {
-        std::cout << ideas[i] << std::endl;
+    while (!this->_brain->getIdea(i).empty() && i < 100) {
+        std::cout << this->_brain->getIdea(i) << std::endl;
+        i++;
     }
 }
 

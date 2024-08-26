@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/26 10:31:14 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/26 11:59:40 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ int main(void) {
     std::cout << "END OF CONSTRUCTORS" << std::endl << std::endl;
     doggie->setIdea("WOUF");
     doggie->showIdeas();
-    kitty->setIdea("WOUF");
+    kitty->setIdea("MEOW");
     kitty->showIdeas();
-    kitten->setIdea("WOUF");
+    kitten->setIdea("KITTENING");
     kitten->showIdeas();
+    kitty->showIdeas();
     std::cout << std::endl << "BEGINNING OF DESTRUCTORS" << std::endl;
     delete doggie;
     delete kitty;

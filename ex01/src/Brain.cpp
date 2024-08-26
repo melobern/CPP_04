@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 08:13:07 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/26 10:20:28 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/26 12:00:12 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ std::string Brain::getIdea(unsigned int index) const {
 
 void    Brain::setIdea(std::string idea) {
     int i = 0;
-    while (this->_ideas[i].empty())
+    while (!this->_ideas[i].empty())
         i++;
     if (i >= 100)
     {
