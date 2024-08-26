@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:24:03 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/26 10:21:59 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/26 11:56:50 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Dog::~Dog() {
 Dog   &Dog::operator=(const Dog &dog) {
     if (this != &dog) {
         this->type = dog.type;
+        this->_brain = dog._brain;
     }
     std::cout << "Copy assignment operator called" << std::endl;
     return (*this);
@@ -47,9 +48,9 @@ void    Dog::makeSound() const {
 
 void   Dog::showIdeas(void) const {
     int i = 0;
-    std::string *ideas = this->_brain->getIdeas();
-    while (!ideas[i].empty()) {
-        std::cout << ideas[i] << std::endl;
+    while (!this->_brain->getIdea(i).empty() && i < 100) {
+        std::cout << this->_brain->getIdea(i) << std::endl;
+        i++;
     }
 }
 
