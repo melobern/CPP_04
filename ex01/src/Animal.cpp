@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/22 14:58:30 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/26 10:38:09 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,18 @@ void    Animal::makeSound() const {
     std::cout << "awwouuuwarrwrrr : Strange unidentified noise." << std::endl;
 }
 
+
+void   Animal::showIdeas(void) const {
+    std::cout << "I have no brain : no ideas !" << std::endl;
+}
+
+void   Animal::setIdea(std::string newIdea) const {
+    (void)newIdea;
+    std::cout << "Sorry I'm brainless, can't stock any idea !" << std::endl;
+}
+
+void   Animal::setIdea(std::string newIdea, unsigned int index) const {
+    (void)newIdea;
+    (void)index;
+    std::cout << "Sorry I'm brainless, can't stock any idea !" << std::endl;
+}

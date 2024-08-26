@@ -6,19 +6,19 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/15 10:06:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/08/22 10:52:11 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/26 08:12:03 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C = c++
-NAME = polymorphism
+NAME = brain
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
 
 # ---------------------------------- Sources --------------------------------- #
-HEADER = Animal Dog Cat WrongAnimal WrongCat
-SRCS = main Animal Dog Cat WrongAnimal WrongCat
+HEADER = Animal Dog Cat WrongAnimal WrongCat Brain
+SRCS = main Animal Dog Cat WrongAnimal WrongCat Brain
 
 # ---------------------------------- Repertories ----------------------------- #
 HEADERS_DIR = includes/
