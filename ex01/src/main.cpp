@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 13:16:58 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:41:53 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void mainTests(void) {
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << "AHAH" << std::endl;
     delete j;
     delete i;
 }
