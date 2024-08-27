@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:37:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/26 10:40:46 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:22:56 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ class WrongAnimal {
   void   setIdea(std::string newIdea, unsigned int index) const;
   std::string   getType(void) const;
  protected:
-    std::string type;
+  std::string type;
 };
 #endif  //  EX01_INCLUDES_WRONGANIMAL_HPP_
