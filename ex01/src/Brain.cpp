@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 08:13:07 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/26 12:00:12 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:18:55 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Brain   &Brain::operator=(const Brain &brain) {
             i++;
         }
     }
-    std::cout << "Brain\t\t: ";
+    std::cout << "Brain\t: ";
     std::cout << "Copy assignment operator called" << std::endl;
     return (*this);
 }
@@ -52,8 +52,7 @@ std::string*   Brain::getIdeas(void) {
 std::string Brain::getIdea(unsigned int index) const {
     std::string empty = "";
 
-    if (index > 100)
-    {
+    if (index >= 100) {
         std::cerr << "Error : wrong index given." << std::endl;
         return (empty);
     }
@@ -62,10 +61,9 @@ std::string Brain::getIdea(unsigned int index) const {
 
 void    Brain::setIdea(std::string idea) {
     int i = 0;
-    while (!this->_ideas[i].empty())
+    while (i < 100 && !this->_ideas[i].empty())
         i++;
-    if (i >= 100)
-    {
+    if (i >= 100) {
         i = 0;
         while (i < 99) {
             this->_ideas[i] = this->_ideas[i + 1];

@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/26 10:40:25 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:20:59 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,17 @@ void    WrongAnimal::makeSound() const {
 }
 
 void   WrongAnimal::showIdeas(void) const {
-    std::cout << "I'm too wrong to have a brain : therefore, no ideas !" << std::endl;
+    std::cout << "I'm too wrong to have a brain : no ideas !" << std::endl;
 }
 
 void   WrongAnimal::setIdea(std::string newIdea) const {
     (void)newIdea;
-    std::cout << "My creator created me really wrong : can't stock any idea !" << std::endl;
+    std::cout << "My creator made me wrong : can't stock ideas !" << std::endl;
 }
 
 void   WrongAnimal::setIdea(std::string newIdea, unsigned int index) const {
     (void)newIdea;
     (void)index;
-    std::cout << "My creator created me really wrong : can't stock any idea !" << std::endl;
+    std::cout << "My creator made me wrong : can't stock ideas !" << std::endl;
 }
 

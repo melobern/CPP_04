@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:37:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/26 10:29:50 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:22:17 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Dog : public Animal {
   virtual void   showIdeas(void) const;
   virtual void   setIdea(std::string newIdea) const;
   virtual void   setIdea(std::string newIdea, unsigned int index) const;
-  private:
-   Brain*    _brain;
+ private:
+  Brain*    _brain;
 };
 #endif  // EX01_INCLUDES_DOG_HPP_
