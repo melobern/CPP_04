@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 13:46:29 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:55:42 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,5 @@ WrongAanimal   &WrongAanimal::operator=(const WrongAanimal &animal) {
 
 std::string    WrongAanimal::getType() const {
     return (this->type);
-}
-
-void    WrongAanimal::makeSound() const {
-    std::cout << "awwouuuwarrwrrr : Strange unidentified noise. ";
-    std::cout << "This sound seems so wrong." << std::endl;
-}
-
-void   WrongAanimal::showIdeas(void) const {
-    std::cout << "I'm too wrong to have a brain : no ideas !" << std::endl;
-}
-
-void   WrongAanimal::setIdea(std::string newIdea) const {
-    (void)newIdea;
-    std::cout << "My creator made me wrong : can't stock ideas !" << std::endl;
-}
-
-void   WrongAanimal::setIdea(std::string newIdea, unsigned int index) const {
-    (void)newIdea;
-    (void)index;
-    std::cout << "My creator made me wrong : can't stock ideas !" << std::endl;
 }
 
