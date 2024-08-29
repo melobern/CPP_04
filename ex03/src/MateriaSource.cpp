@@ -1,48 +1,77 @@
 /* Copyright 2024 <mbernard>************************************************* */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:42:41 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 15:02:42 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:10:51 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/AMateria.hpp"
+#include "../includes/MateriaSource.hpp"
 
-AMateria::AMateria(std::string const & type) {
-    std::cout << "AMateria\t\t: ";
+#define RED "\033[31m"
+#define RESET "\033[0m"
+
+MateriaSource::MateriaSource(void) {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Default constructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+        this->_materias[i] = 0;
     return;
 }
 
-
-AMateria::AMateria(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
+MateriaSource::MateriaSource(const MateriaSource &materiasource) {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Copy constructor called" << std::endl;
+    *this = materiasource;
 }
 
-
-AMateria::AMateria &operator=(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
+MateriaSource& MateriaSource::operator=(const MateriaSource &materiasource) {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &materiasource) {
+        for (int i = 0; i < 4; i++) {
+            delete this->_materias[i];
+            this->_materias[i] = 0;
+            if (materiasource._materias[i] != 0)
+                this->_materias[i] = materiasource._materias[i]->clone();
+        }
+    }
+    return (*this);
 }
 
-
-AMateria::~AMateria() {
-    std::cout << "AMateria\t\t: ";
+MateriaSource::~MateriaSource() {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Destructor called" << std::endl;
+    for (int i = 0; i < 4; i++)
+        delete this->_materias[i];
 }
 
+void      MateriaSource::learnMateria(AMateria* materia) {
+    int idx = 0;
 
-std::string const& AMateria::getType() const {
-    return (this->type);
+    while (idx < 4 && this->_materias[idx] != 0)
+        idx++;
+    if (idx > 3) {
+        std::cout << RED << "Error : can't learn more materias.";
+        std::cout << RESET << std::endl;
+        return;
+    }
+    this->_materias[idx] = materia;
 }
 
-void AMateria::use(const ICharacter& target) {
-    std::cout << "* shoots an ice bolt at "<< target->getName() << " *" << std::endl;
-    std::cout << "* heals " << target->getName << "’s wounds *" << std::endl;
-}
+AMateria* MateriaSource::createMateria(std::string const &type) {
+    int idx = 0;
 
+    while (idx < 4 && this->_materias[idx] != 0) {
+        if (this->_materias[idx]->getType() == type)
+            return (this->_materias[idx]->clone());
+        idx++;
+    }
+    std::cout << RED << "Error : " << type << " materia unknown.";
+    std::cout << RESET << std::endl;
+    return (0);
+}

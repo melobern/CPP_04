@@ -6,7 +6,7 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#              #
-#    Updated: 2024/08/27 15:34:25 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/29 11:54:54 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ MKDIR = mkdir -p
 RMDIR = rm -rf
 
 # ---------------------------------- Sources --------------------------------- #
-HEADER = AMateria IMateria MateriaSource ICharacter Character Ice Cure
-SRCS = main AMateria IMateria MateriaSource ICharacter Character Ice Cure
+HEADER = AMateria IMateriaSource MateriaSource ICharacter Character Ice Cure
+SRCS = main AMateria Character Cure Ice MateriaSource 
 
 # ---------------------------------- Repertories ----------------------------- #
 HEADERS_DIR = includes/

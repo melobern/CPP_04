@@ -6,12 +6,13 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 09:37:40 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:51:23 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EX03_INCLUDES_CURE_HPP_
 #define EX03_INCLUDES_CURE_HPP_
+# include <iostream>
 # include <string>
 # include "AMateria.hpp"
 # define RED "\033[31m"
@@ -25,7 +26,7 @@ class Cure : public AMateria {
   explicit Cure(const Cure &cure);
   Cure &operator=(const Cure &cure);
   ~Cure(void);
-  virtual AMateria* clone();
+  virtual AMateria* clone() const;
   virtual void use(const ICharacter& target);
 };
 

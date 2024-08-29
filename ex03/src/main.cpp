@@ -6,11 +6,19 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:59:06 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 15:34:53 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:41:42 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+
+# include "../includes/ICharacter.hpp"
+# include "../includes/Character.hpp"
+# include "../includes/Ice.hpp"
+# include "../includes/Cure.hpp"
+# include "../includes/IMateriaSource.hpp"
+# include "../includes/MateriaSource.hpp"
+# include "../includes/AMateria.hpp"
 
 int main(void) {
     IMateriaSource* src = new MateriaSource();
