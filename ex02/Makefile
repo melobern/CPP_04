@@ -6,12 +6,12 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/15 10:06:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/08/27 13:43:46 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/29 15:47:11 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C = c++
-NAME = brain
+NAME = Abrain
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
