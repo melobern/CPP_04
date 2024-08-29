@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:42:41 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 13:10:51 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:24:56 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,16 @@
 #define RESET "\033[0m"
 
 MateriaSource::MateriaSource(void) {
-    std::cout << "MateriaSource\t\t: ";
-    std::cout << "Default constructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         this->_materias[i] = 0;
     return;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &materiasource) {
-    std::cout << "MateriaSource\t\t: ";
-    std::cout << "Copy constructor called" << std::endl;
     *this = materiasource;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource &materiasource) {
-    std::cout << "MateriaSource\t\t: ";
-    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &materiasource) {
         for (int i = 0; i < 4; i++) {
             delete this->_materias[i];
@@ -44,8 +38,6 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &materiasource) {
 }
 
 MateriaSource::~MateriaSource() {
-    std::cout << "MateriaSource\t\t: ";
-    std::cout << "Destructor called" << std::endl;
     for (int i = 0; i < 4; i++)
         delete this->_materias[i];
 }

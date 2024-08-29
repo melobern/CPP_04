@@ -13,34 +13,25 @@
 #include "../includes/AMateria.hpp"
 
 AMateria::AMateria(void) {
-    std::cout << "AMateria\t\t: ";
-    std::cout << "Default constructor called" << std::endl;
     return;
 }
 
 AMateria::AMateria(std::string const &type) : _type(type) {
-    std::cout << "AMateria\t\t: ";
-    std::cout << "Constructor called" << std::endl;
     return;
 }
 
 AMateria::AMateria(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
-    std::cout << "Copy constructor called" << std::endl;
     *this = amateria;
 }
 
 AMateria& AMateria::operator=(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
-    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &amateria)
         this->_type = amateria._type;
     return (*this);
 }
 
 AMateria::~AMateria() {
-    std::cout << "AMateria\t\t: ";
-    std::cout << "Destructor called" << std::endl;
+    return;
 }
 
 std::string const& AMateria::getType() const {
