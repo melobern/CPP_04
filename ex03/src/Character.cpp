@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:42:41 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 13:15:06 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:50:07 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Character::Character(const Character &character) {
     *this = character;
 }
 
-Character& Character::operator=(const Character &character) {
+Character& Character::operator=(Character const &character)  {
     if (this != &character) {
         this->_name = character._name;
         for (int i = 0; i < 4; i++) {
@@ -64,6 +64,9 @@ std::string const& Character::getName() const {
 }
 
 void Character::equip(AMateria* m) {
+    if (!m) {
+        return;
+    }
     int idx = 0;
     std::string item = m->getType();
 
@@ -80,7 +83,8 @@ void Character::equip(AMateria* m) {
 
 void Character::unequip(int idx) {
     if (idx < 0 || idx > 3 || this->_inventory[idx] == 0) {
-        std::cout << RED << "Error : no item at index" << RESET << std::endl;
+        std::cout << RED << "Error : no item at index " << idx;
+        std::cout << RESET << std::endl;
         return;
     }
 
