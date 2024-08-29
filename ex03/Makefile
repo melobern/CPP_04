@@ -6,12 +6,12 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#              #
-#    Updated: 2024/08/29 11:54:54 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/29 13:30:25 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C = c++
-NAME = brain
+NAME = Materias
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
