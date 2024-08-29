@@ -6,48 +6,48 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:42:41 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 15:39:51 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 09:04:25 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/AMateria.hpp"
+#include "../includes/MateriaSource.hpp"
 
-AMateria::AMateria(void) {
-    std::cout << "AMateria\t\t: ";
+MateriaSource::MateriaSource(void) {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Default constructor called" << std::endl;
     return;
 }
 
-AMateria::AMateria(std::string const &type) : type(_type) {
-    std::cout << "AMateria\t\t: ";
+MateriaSource::MateriaSource(std::string const &type) : type(_type) {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Constructor called" << std::endl;
     return;
 }
 
-AMateria::AMateria(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
+MateriaSource::MateriaSource(const MateriaSource &materiasource) {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Copy constructor called" << std::endl;
-    this = *amateria;
+    this = *materiasource;
 }
 
-AMateria& AMateria::operator=(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
+MateriaSource& MateriaSource::operator=(const MateriaSource &materiasource) {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &amateria)
-        this->_type = amateria._type;
+    if (this != &materiasource)
+        this->_type = materiasource._type;
     return (*this);
 }
 
-AMateria::~AMateria() {
-    std::cout << "AMateria\t\t: ";
+MateriaSource::~MateriaSource() {
+    std::cout << "MateriaSource\t\t: ";
     std::cout << "Destructor called" << std::endl;
 }
 
-std::string const& AMateria::getType() const {
+std::string const& MateriaSource::getType() const {
     return (this->_type);
 }
 
-void AMateria::use(const ICharacter& target) {
+void MateriaSource::use(const ICharacter& target) {
     (void) target;
 }
 

@@ -6,13 +6,14 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 15:33:00 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 08:22:39 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EX03_INCLUDES_ICHARACTER_HPP_
 #define EX03_INCLUDES_ICHARACTER_HPP_
 # include <string>
+# include "AMateria.hpp"
 
 class ICharacter {
  public:

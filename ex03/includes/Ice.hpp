@@ -1,30 +1,28 @@
 /* Copyright 2024 <mbernard>************************************************* */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 14:45:56 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 09:37:22 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX03_INCLUDES_AMATERIA_HPP_
-#define EX03_INCLUDES_AMATERIA_HPP_
+#ifndef EX03_INCLUDES_ICE_HPP_
+#define EX03_INCLUDES_ICE_HPP_
 # include <string>
+# include "AMateria.hpp"
 
-class AMateria {
- protected:
-  std::string type;
+class Ice : public AMateria {
  public:
-  explicit AMateria(std::string const & type);
-  explicit AMateria(const AMateria &amateria);
-  AMateria &operator=(const AMateria &amateria);
-  virtual ~AMateria();
-  std::string const & getType() const;
-  virtual AMateria* clone() const = 0;
+  Ice(void);
+  explicit Ice(const Ice &ice);
+  Ice &operator=(const Ice &ice);
+  ~Ice(void);
+  virtual AMateria* clone();
   virtual void use(const ICharacter& target);
 };
 
-#endif  //  EX03_INCLUDES_AMATERIA_HPP_
+#endif  //  EX03_INCLUDES_ICE_HPP_
