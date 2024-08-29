@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 13:37:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 13:47:49 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:46:41 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class WrongAanimal {
   explicit WrongAanimal(const WrongAanimal &type);
   virtual ~WrongAanimal(void);
   WrongAanimal &operator=(const WrongAanimal &animal);
-  virtual void   makeSound(void) const;
-  virtual void   showIdeas(void) const;
-  virtual void   setIdea(std::string newIdea) const;
-  virtual void   setIdea(std::string newIdea, unsigned int index) const;
+  virtual void   makeSound(void) const = 0;
+  virtual void   showIdeas(void) const = 0;
+  virtual void   setIdea(std::string newIdea) const = 0;
+  virtual void   setIdea(std::string newIdea, unsigned int index) const = 0;
   std::string   getType(void) const;
  protected:
   std::string type;
