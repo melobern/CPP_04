@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 09:53:23 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 10:51:27 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ class Character : public ICharacter {
   explicit Character(const Character &character);
   Character &operator=(const Character &character);
   virtual ~Character();
-  std::string const & getType() const;
 
-  virtual ~ICharacter() {}
   virtual std::string const &getName() const;
   virtual void equip(AMateria* m);
   virtual void unequip(int idx);
