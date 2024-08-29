@@ -12,13 +12,10 @@
 
 #include "../includes/Character.hpp"
 #define RED "\033[31m"
-#define GREEN "\033[0;32m"
 #define YELLOW "\033[0;33m"
 #define RESET "\033[0m"
 
 Character::Character(void) : _name("Anonymous") {
-    std::cout << "Character\t: ";
-    std::cout << "Default constructor called" << std::endl;
     for (int i = 0; i < 4; i++) {
         this->_inventory[i] = 0;
         this->_tmpInventory[i] = 0;
@@ -27,8 +24,6 @@ Character::Character(void) : _name("Anonymous") {
 }
 
 Character::Character(const std::string &name) : _name(name) {
-    std::cout << "Character\t: ";
-    std::cout << "Default constructor called" << std::endl;
     for (int i = 0; i < 4; i++) {
         this->_inventory[i] = 0;
         this->_tmpInventory[i] = 0;
@@ -37,14 +32,10 @@ Character::Character(const std::string &name) : _name(name) {
 }
 
 Character::Character(const Character &character) {
-    std::cout << "Character\t: ";
-    std::cout << "Copy constructor called" << std::endl;
     *this = character;
 }
 
 Character& Character::operator=(const Character &character) {
-    std::cout << "Character\t: ";
-    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &character) {
         this->_name = character._name;
         for (int i = 0; i < 4; i++) {
@@ -62,8 +53,6 @@ Character& Character::operator=(const Character &character) {
 }
 
 Character::~Character() {
-    std::cout << "Character\t: ";
-    std::cout << "Destructor called" << std::endl;
     for (int i = 0; i < 4; i++) {
         delete this->_inventory[i];
         delete this->_tmpInventory[i];
@@ -87,9 +76,6 @@ void Character::equip(AMateria* m) {
         return;
     }
     this->_inventory[idx] = m;
-    std::cout << GREEN;
-    std::cout << m->getType() << " has been successfully equipied.";
-    std::cout << RESET << std::endl;
 }
 
 void Character::unequip(int idx) {
@@ -111,9 +97,6 @@ void Character::unequip(int idx) {
     } else {
         this->_tmpInventory[i] = this->_inventory[idx];
         this->_inventory[idx] = 0;
-        std::cout << GREEN;
-        std::cout << item << " has been successfully unequipied.";
-        std::cout << RESET << std::endl;
     }
 }
 

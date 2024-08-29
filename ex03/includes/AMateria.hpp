@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 11:50:03 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:44:06 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define EX03_INCLUDES_AMATERIA_HPP_
 # include <iostream>
 # include <string>
-# include "ICharacter.hpp" 
+# include "ICharacter.hpp"
 
 class AMateria {
  protected:

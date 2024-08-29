@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:59:06 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 11:41:42 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:33:46 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "../includes/MateriaSource.hpp"
 # include "../includes/AMateria.hpp"
 
-int main(void) {
+static void    mainTests(void) {
     IMateriaSource* src = new MateriaSource();
 
     src->learnMateria(new Ice());
@@ -41,5 +41,9 @@ int main(void) {
     delete bob;
     delete me;
     delete src;
-    return 0;
+}
+
+int main(void) {
+    mainTests();
+    return (0);
 }
