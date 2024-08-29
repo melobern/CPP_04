@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 12:07:48 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:15:13 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Character : public ICharacter {
  public:
   Character(void);
   explicit Character(std::string const &name);
-  explicit Character(const Character &character);
+  Character(const Character &character);
   Character &operator=(const Character &character);
   virtual ~Character();
 
