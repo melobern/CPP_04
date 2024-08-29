@@ -1,48 +1,46 @@
 /* Copyright 2024 <mbernard>************************************************* */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:42:41 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 15:02:42 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 09:39:52 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/AMateria.hpp"
+#include "../includes/Ice.hpp"
 
-AMateria::AMateria(std::string const & type) {
-    std::cout << "AMateria\t\t: ";
+Ice::Ice(void) {
+    std::cout << "Ice\t\t: ";
     std::cout << "Default constructor called" << std::endl;
     return;
 }
 
-
-AMateria::AMateria(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
+Ice::Ice(const Ice &ice) : Amateria("ice") {
+    std::cout << "Ice\t\t: ";
     std::cout << "Copy constructor called" << std::endl;
+    this = *ice;
+    return (this);
 }
 
-
-AMateria::AMateria &operator=(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
+Ice::Ice &operator=(const Ice &ice) : Amateria(ice) {
+    std::cout << "Ice\t\t: ";
     std::cout << "Copy assignment operator called" << std::endl;
 }
 
-
-AMateria::~AMateria() {
-    std::cout << "AMateria\t\t: ";
+Ice::~Ice(void) {
+    std::cout << "Ice\t\t: ";
     std::cout << "Destructor called" << std::endl;
 }
 
 
-std::string const& AMateria::getType() const {
-    return (this->type);
+void Ice::use(const ICharacter& target) {
+    std::cout << "* shoots an ice bolt at " << target->getName() << " *";
+    std::cout << std::endl;
 }
 
-void AMateria::use(const ICharacter& target) {
-    std::cout << "* shoots an ice bolt at "<< target->getName() << " *" << std::endl;
-    std::cout << "* heals " << target->getName << "’s wounds *" << std::endl;
+Amateria* Ice::clone(void) const {
+    return (new Ice(*this));
 }
-

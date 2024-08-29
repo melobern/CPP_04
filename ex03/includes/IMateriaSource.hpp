@@ -1,30 +1,30 @@
 /* Copyright 2024 <mbernard>************************************************* */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   IMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 14:45:56 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 08:32:31 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX03_INCLUDES_AMATERIA_HPP_
-#define EX03_INCLUDES_AMATERIA_HPP_
+#ifndef EX03_INCLUDES_IMateria_HPP_
+#define EX03_INCLUDES_IMateria_HPP_
 # include <string>
 
-class AMateria {
+class IMateria {
  protected:
   std::string type;
  public:
-  explicit AMateria(std::string const & type);
-  explicit AMateria(const AMateria &amateria);
-  AMateria &operator=(const AMateria &amateria);
-  virtual ~AMateria();
+  explicit IMateria(std::string const & type);
+  explicit IMateria(const IMateria &IMateria);
+  IMateria &operator=(const IMateria &IMateria);
+  virtual ~IMateria();
   std::string const & getType() const;
-  virtual AMateria* clone() const = 0;
+  virtual IMateria* clone() const = 0;
   virtual void use(const ICharacter& target);
 };
 
-#endif  //  EX03_INCLUDES_AMATERIA_HPP_
+#endif  //  EX03_INCLUDES_IMateria_HPP_

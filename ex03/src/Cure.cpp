@@ -1,48 +1,45 @@
 /* Copyright 2024 <mbernard>************************************************* */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 14:42:41 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/27 15:02:42 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 09:39:14 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/AMateria.hpp"
+#include "../includes/Cure.hpp"
 
-AMateria::AMateria(std::string const & type) {
-    std::cout << "AMateria\t\t: ";
+Cure::Cure(void) {
+    std::cout << "Cure\t\t: ";
     std::cout << "Default constructor called" << std::endl;
     return;
 }
 
-
-AMateria::AMateria(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
+Cure::Cure(const Cure &cure) : Amateria("cure") {
+    std::cout << "Cure\t\t: ";
     std::cout << "Copy constructor called" << std::endl;
+    this = *cure;
+    return (this);
 }
 
-
-AMateria::AMateria &operator=(const AMateria &amateria) {
-    std::cout << "AMateria\t\t: ";
+Cure::Cure &operator=(const Cure &cure) : Amateria(cure) {
+    std::cout << "Cure\t\t: ";
     std::cout << "Copy assignment operator called" << std::endl;
 }
 
-
-AMateria::~AMateria() {
-    std::cout << "AMateria\t\t: ";
+Cure::~Cure(void) {
+    std::cout << "Cure\t\t: ";
     std::cout << "Destructor called" << std::endl;
 }
 
-
-std::string const& AMateria::getType() const {
-    return (this->type);
+void Cure::use(const ICharacter& target) {
+    std::cout << "* heals " << target->getName << "’s wounds *";
+    std::cout << std::endl;
 }
 
-void AMateria::use(const ICharacter& target) {
-    std::cout << "* shoots an ice bolt at "<< target->getName() << " *" << std::endl;
-    std::cout << "* heals " << target->getName << "’s wounds *" << std::endl;
+Amateria* Cure::clone(void) const {
+    return (new Cure(*this));
 }
-
