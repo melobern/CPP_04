@@ -6,12 +6,13 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 09:37:22 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:50:59 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EX03_INCLUDES_ICE_HPP_
 #define EX03_INCLUDES_ICE_HPP_
+# include <iostream>
 # include <string>
 # include "AMateria.hpp"
 
@@ -21,7 +22,7 @@ class Ice : public AMateria {
   explicit Ice(const Ice &ice);
   Ice &operator=(const Ice &ice);
   ~Ice(void);
-  virtual AMateria* clone();
+  virtual AMateria* clone() const;
   virtual void use(const ICharacter& target);
 };
 

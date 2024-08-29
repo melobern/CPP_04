@@ -6,25 +6,26 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 13:54:20 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/29 09:05:00 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:07:59 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EX03_INCLUDES_MATERIASOURCE_HPP_
 #define EX03_INCLUDES_MATERIASOURCE_HPP_
+# include <iostream>
 # include <string>
+# include "IMateriaSource.hpp"
 
-class MateriaSource {
- protected:
-  std::string type;
+class MateriaSource : public IMateriaSource {
  public:
-  explicit MateriaSource(std::string const & type);
+  MateriaSource(void);
   explicit MateriaSource(const MateriaSource &materiasource);
   MateriaSource &operator=(const MateriaSource &materiasource);
   virtual ~MateriaSource();
-  std::string const & getType() const;
-  virtual MateriaSource* clone() const = 0;
-  virtual void use(const ICharacter& target);
+  virtual void      learnMateria(AMateria* materia);
+  virtual AMateria* createMateria(std::string const &type);
+ private:
+  AMateria* _materias[4];
 };
 
 #endif  //  EX03_INCLUDES_MATERIASOURCE_HPP_
